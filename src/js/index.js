@@ -45,7 +45,9 @@ const SecondCounter = () => {
     const resetTimer = () =>
         {setActive(false) 
         setSeconds (0) }   
+
     const handleChange = e => setSeconds(parseInt(e.target.value, 10) || 0)
+    
     return (
         <div className="bigCounter"> 
                 <section className="counter-head">
@@ -115,11 +117,5 @@ const SecondCounter = () => {
 
 
 const app = createRoot(document.getElementById('app'))
-let counter = 0;
-
-setInterval(() => {
-
-    counter++;
-    app.render(<SecondCounter seconds={counter}/>)
-}, 1000);
+ app.render(<SecondCounter/>)
 
